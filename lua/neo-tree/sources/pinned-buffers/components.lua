@@ -21,7 +21,7 @@ M.name = function(config, node, state)
 	local name = node.name
 	return {
 		text = node.extra.index .. ' ' .. name,
-		-- highlight = highlight,
+		highlight = highlights.FILE_NAME
 	}
 end
 

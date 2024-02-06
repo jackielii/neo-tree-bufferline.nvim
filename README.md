@@ -73,6 +73,8 @@ with edgy:
 	...
 ```
 
+- [ ] empty pinned buffers seems to still display a line
 - [ ] bufferline to merge https://github.com/akinsho/bufferline.nvim/issues/445
 - [ ] numbering not correct. Probably need to pull bufferline state
 - [ ] removing buffer not refreshing or maybe we want to keep it?
+- [ ] order not updating when moving buffer

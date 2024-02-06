@@ -70,20 +70,24 @@ M.navigate = function(state, path, path_to_reveal, callback, async)
 		end
 	end
 
+	local shortenPath = function(parent, fn)
+		local tail = fnmod(parent, ":t")
+		if tail == '' then
+			return fn
+		end
+		return string.sub(tail, 1, 1) .. '/' .. fn
+	end
+
 	-- fix duplicate names to include parent names
 	local seen = {}
 	for i, item in ipairs(items) do
 		if seen[item.name] then
 			local index = seen[item.name]
-			local path1, path2 = items[index].path, item.path
-			local name1, name2 = '', ''
-			while name1 == name2 do
-				local parent1, parent2 = fnmod(path1, ":h"), fnmod(path2, ":h")
-				if parent1 == '' or parent2 == '' then
-					break
-				end
-				name1, name2 = fnmod(path1, ":t") .. '/' .. name1, fnmod(path2, ":t") .. '/' .. name2
-				path1, path2 = parent1, parent2
+			local path1, path2 = fnmod(items[index].path, ":h"), fnmod(item.path, ":h")
+			local name1, name2 = items[index].name, item.name
+			while name1 == name2 and path1 ~= path2 do
+				name1, name2 = shortenPath(path1, name1), shortenPath(path2, name2)
+				path1, path2 = fnmod(path1, ":h"), fnmod(path2, ":h")
 			end
 			items[index].name = name1
 			item.name = name2
@@ -102,9 +106,7 @@ M.follow = function(callback, force_show)
 	utils.debounce("pinned-buffers-follow", function()
 		local state = manager.get_state(M.name)
 		local path_to_reveal = vim.fn.expand("%:p")
-		local res = renderer.focus_node(state, path_to_reveal, true)
-		print("follow", res)
-		return res
+		return renderer.focus_node(state, path_to_reveal, true)
 	end, 100, utils.debounce_strategy.CALL_LAST_ONLY)
 end
 

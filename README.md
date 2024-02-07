@@ -1,5 +1,7 @@
 # neo-tree-bufferline.nvim
 
+Status: usable but not complete
+
 show pinned buffers as a neo-tree panel
 
 Via lazy.nvim:
@@ -74,7 +76,7 @@ with edgy:
 ```
 
 - [ ] empty pinned buffers seems to still display a line
-- [ ] bufferline to merge https://github.com/akinsho/bufferline.nvim/pull/858
+- [x] ~~bufferline to merge https://github.com/akinsho/bufferline.nvim/pull/858.~~ Using monkey patch for now
 - [x] numbering not correct. Probably need to pull bufferline state
 - [ ] removing buffer not refreshing or maybe we want to keep it?
 - [x] order not updating when moving buffer

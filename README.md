@@ -4,12 +4,11 @@ Status: usable but not complete
 
 show pinned buffers as a neo-tree panel
 
-Via lazy.nvim:
+Install via lazy.nvim:
 
 ```lua
   {
-    -- "nvim-neo-tree/neo-tree.nvim",
-    dir = "~/personal/neo-tree.nvim",
+    "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
     dependencies = {
       "nvim-lua/plenary.nvim",

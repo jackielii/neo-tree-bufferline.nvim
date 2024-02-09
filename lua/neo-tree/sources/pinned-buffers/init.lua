@@ -143,8 +143,9 @@ M.setup = function(config, global_config)
 	})
 
 	-- monkey patch bufferline to refresh pinned buffers
+	local refresh = require("bufferline.ui").refresh
 	require("bufferline.ui").refresh = function()
-		vim.schedule(function() vim.cmd.redrawtabline() end)
+		refresh()
 		vim.api.nvim_exec_autocmds("User", { pattern = "BufferlineUpdated" })
 	end
 end

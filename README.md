@@ -77,7 +77,7 @@ with edgy:
 ## TODO
 
 - [ ] empty pinned buffers seems to still display a line
-- [x] ~~bufferline to merge https://github.com/akinsho/bufferline.nvim/pull/858.~~ Using monkey patch for now
+- [x] ~~bufferline to merge https://github.com/akinsho/bufferline.nvim/pull/858.~~ Using [monkey patch](https://github.com/jackielii/neo-tree-bufferline.nvim/blob/main/lua/neo-tree/sources/pinned-buffers/init.lua#L146-L150) for now
 - [x] numbering not correct. Probably need to pull bufferline state
 - [ ] removing buffer not refreshing or maybe we want to keep it?
 - [x] order not updating when moving buffer

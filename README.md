@@ -1,6 +1,6 @@
 # neo-tree-bufferline.nvim
 
-Status: usable but not complete
+_Status_: usable [TODO](#TODO)
 
 show pinned buffers as a neo-tree panel
 
@@ -73,6 +73,8 @@ with edgy:
 
 	...
 ```
+
+## TODO
 
 - [ ] empty pinned buffers seems to still display a line
 - [x] ~~bufferline to merge https://github.com/akinsho/bufferline.nvim/pull/858.~~ Using monkey patch for now

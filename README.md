@@ -81,3 +81,4 @@ with edgy:
 - [x] numbering not correct. Probably need to pull bufferline state
 - [ ] removing buffer not refreshing or maybe we want to keep it?
 - [x] order not updating when moving buffer
+- [ ] rename buffer not handled
